@@ -1,18 +1,16 @@
 clear all
 close all
-pkg load image
 
 for(imDaVez=1:1:10)
-    imCinza = imread(strcat('C:\Users\ehbs1\OneDrive\Documentos\projetoPDI\Imagens-originais\',mat2str(imDaVez),'.jpg'));
-
-
+    imCinza = imread(strcat('/home/phelyppe/Documentos/Workspace/black-bean-profitability/Imagens-originais/',mat2str(imDaVez),'.jpg'));
+    
     % Pegando a distância entre cada linha
     distRows = floor((size(imCinza,1)/5));
-    distRows = uint64(distRows)
+    distRows = uint64(distRows);
 
     % Pegando a distância entre cada coluna
     distColumns = floor((size(imCinza,2)/5));
-    distColumns = uint64(distColumns)
+    distColumns = uint64(distColumns);
 
     % Andando de posição em posição para cropar imagem
     for(i=uint64(1):1:5)
@@ -31,11 +29,7 @@ for(imDaVez=1:1:10)
                 contY++;
             endfor
             % Cropando imagem
-            imwrite(imCropada,strcat('C:\Users\ehbs1\OneDrive\Documentos\projetoPDI\Crops\imagem',mat2str(imDaVez),',L',mat2str(i),',C',mat2str(j),'.jpg'))
+            imwrite(imCropada,strcat('/home/phelyppe/Documentos/Workspace/black-bean-profitability/Crops/imagem',mat2str(imDaVez),',L',mat2str(i),',C',mat2str(j),'.jpg'))
         endfor
     endfor
 endfor
-
-
-
-
