@@ -2,8 +2,8 @@ clear all
 close all
 
 for(imDaVez=1:1:10)
-    imCinza = imread(strcat('/home/phelyppe/Documentos/Workspace/black-bean-profitability/Imagens-originais/',mat2str(imDaVez),'.jpg'));
-    
+    imCinza = imread(strcat('C:\Users\Erick\Documents\PDI\black-bean-profitability\Imagens-originais\',mat2str(imDaVez),'.jpg'));
+
     % Pegando a distância entre cada linha
     distRows = floor((size(imCinza,1)/5));
     distRows = uint64(distRows);
@@ -29,7 +29,7 @@ for(imDaVez=1:1:10)
                 contY++;
             endfor
             % Cropando imagem
-            imwrite(imCropada,strcat('/home/phelyppe/Documentos/Workspace/black-bean-profitability/Crops/imagem',mat2str(imDaVez),',L',mat2str(i),',C',mat2str(j),'.jpg'))
+            imwrite(imCropada,strcat('C:\Users\Erick\Documents\PDI\black-bean-profitability\Crops\imagem',mat2str(imDaVez),',L',mat2str(i),',C',mat2str(j),'.jpg'))
         endfor
     endfor
 endfor
