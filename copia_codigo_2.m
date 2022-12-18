@@ -239,17 +239,28 @@ for(imagem=1:10)
 
             imSegmentada = imLogica .* im;
 
+            areaGrao = 0;
+
 ##            figure('name','imagem final')
 ##            imshow(imCinza)
 
+            for (i=1:size(imLogica,1))
+                for (j=1:size(imLogica,2))
+                    if(imLogica(i, j))
+                        areaGrao++;
+                    end
+                end
+            end
+
+            disp(strcat('a area do grao da imagem ',mat2str(imagem),',L',mat2str(linha),',C',mat2str(coluna),'.png e: ',mat2str(areaGrao)))
 
             imwrite(imSegmentada,strcat('C:\Users\Erick\Documents\black-bean-profitability\Imagem-Final\imagem',mat2str(imagem),',L',mat2str(linha),',C',mat2str(coluna),'.png'))
 
             % Mostrando porcentagem do processamento das imagens no terminal
-            porcentagem = floor((contPercent)*100/250);
-            clc
-            disp('SEPARAÇÃO DE REGIÕES'),disp(strcat(mat2str(porcentagem),'%'))
-            contPercent++;
+##            porcentagem = floor((contPercent)*100/250);
+##            clc
+##            disp('SEPARAÇÃO DE REGIÕES'),disp(strcat(mat2str(porcentagem),'%'))
+##            contPercent++;
         end
     end
 end
